@@ -1,0 +1,18 @@
+def solution (N, C):
+    # Write your code here  
+    s=[] 
+    result=[]
+    for i in C: 
+        if(i):
+            s.append(i) 
+        else:
+            result.append(s.pop())
+    return result
+
+    pass
+
+N = input()
+C = map(int, raw_input().split())
+
+out_ = solution(N, C)
+print ' '.join(map(str, out_))
