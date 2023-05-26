@@ -1,0 +1,49 @@
+import java.util.*;
+import java.io.*;
+
+public class Main {
+  public static void main(String args[]) throws IOException {
+    
+    //write your code here
+    // Queue q=new Linkedlist<>(); 
+    Scanner sc=new Scanner(System.in); 
+    int n=sc.nextInt(); 
+    int arr[]=new int[n];
+    int arr1[]=new int[n];
+    
+    Queue<Integer> ravi = new LinkedList<>();
+    Queue<Integer> salma = new LinkedList<>();
+    
+    for(int i=0;i<n;i++){ 
+      int a=sc.nextInt();
+      ravi.add(a);
+    } 
+    for(int j=0;j<n;j++){
+      
+      int b=sc.nextInt();
+      salma.add(b);
+    } 
+    
+      // while(!dq1.isempty()="" &&="" !dq2.isempty())="" {="" if(dq1.peekfirst()="=" dq2.peekfirst()){="" dq1.removefirst();dq2.removefirst();t++;="" else{="" dq1.addlast(dq1.peekfirst());="" dq1.removefirst();="" t++;="" system.out.print(t);="" <="" pre="">
+    
+    int i=0; 
+    while(!ravi.isEmpty() && !salma.isEmpty()){ 
+      
+     
+      if(ravi.peek()!=salma.peek()){
+      int a=ravi.peek();
+            ravi.remove();
+            i++;
+            ravi.add(a); 
+      } 
+      if(ravi.peek()==salma.peek()){
+        ravi.remove(); 
+        salma.remove();
+        i++;
+      }
+      
+      
+    }
+    System.out.println(i);
+  }
+}
