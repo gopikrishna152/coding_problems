@@ -1,0 +1,67 @@
+import java.util.*;
+import java.io.*;
+
+public class Main {
+  public static void main(String args[]) throws IOException {
+    Scanner sc=new Scanner(System.in); 
+  long n=sc.nextInt(); 
+    while(n>0){
+    //write your code here  
+    long  size=sc.nextInt(); 
+    
+   
+    
+        // create a min-heap using `PriorityQueue` class from elements of the list
+        PriorityQueue<Long> pq = new PriorityQueue<>(); 
+        for( long i=0;i<size;i++){
+      long   a=sc.nextInt();  
+      pq.add(a);
+      
+    }
+ 
+        // keep track of the minimum cost so far
+         long  cost = 0;
+ 
+        // repeat till heap size is reduced to one
+        while (pq.size() > 1)
+        {
+            // Extract the top two elements from the min-heap
+             long x = pq.remove();
+            long y = pq.remove();
+ 
+            // calculate the cost of the extracted values
+            long  sum = x + y;
+ 
+            // insert the cost back to the min-heap
+            pq.add(sum);
+ 
+            // update the minimum cost
+            cost += sum;
+            
+        } 
+        System.out.println(cost); 
+        n--;
+    
+  } 
+  }
+}  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
