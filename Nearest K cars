@@ -1,0 +1,40 @@
+import java.util.PriorityQueue;
+import java.util.Scanner;
+
+// import javax.xml.transform.Source;
+
+public class get {
+    static class point implements Comparable<point> {
+        int x;
+        int y;
+        int dist;
+        int carno;
+
+        public point(int x, int y, int dist, int carno) {
+            this.x = x;
+            this.y = y;
+            this.dist = dist;
+            this.carno = carno;
+        }
+
+        @Override
+        public int compareTo(point p2) {
+            return this.dist - p2.dist;
+        }
+
+    }
+
+    public static void main(String[] args) {
+        int pts[][] = { { 3, 3 }, { 5, -1 }, { -2, 4 } };
+        int k = 1;
+        // PrioritQueue<point> pq=new PriorityQueue<>();
+        PriorityQueue<point> pq = new PriorityQueue<>();
+        for (int i = 0; i < pts.length; i++) {
+            int dist = pts[i][0] * pts[i][0] + pts[i][1] * pts[i][1];
+            pq.add(new point(pts[i][0], pts[i][1], dist, i));
+        }
+        for (int i = 0; i < k; i++) {
+            System.out.println("c" + pq.remove().carno);
+        }
+    }
+}
